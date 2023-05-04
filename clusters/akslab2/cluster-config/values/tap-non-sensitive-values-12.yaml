@@ -1,0 +1,78 @@
+---
+tap_install:
+  values: 
+        shared:
+          ingress_domain: "akslab2.tap.fynesy.com"
+          ingress_issuer: "letsencrypt-production"
+
+
+        ceip_policy_disclosed: true
+
+        profile: full 
+        supply_chain: basic 
+
+        ootb_supply_chain_basic: 
+          registry:
+            server: "index.docker.io"
+            repository: "fynesy"
+          gitops:
+            ssh_secret: ""
+
+        contour:
+          envoy:
+            service:
+              type: LoadBalancer 
+
+        buildservice:
+          kp_default_repository: "fynesy/buildservice"
+
+        tap_gui:
+          service_type: ClusterIP # If the shared.ingress_domain is set as earlier, this must be set to ClusterIP.
+          metadataStoreAutoconfiguration: true 
+          app_config:
+            auth:
+              allowGuestAccess: true
+            catalog:
+              locations:
+                - type: url
+                  target: http://github.com/tfynes-pivotal/tapblankcatalog/blob/main/catalog-info.yaml
+
+        metadata_store:
+          ns_for_export_app_cert: "*"
+          app_service_type: ClusterIP # Defaults to LoadBalancer. If shared.ingress_domain is set earlier, this must be set to ClusterIP.
+
+        scanning:
+          metadataStore:
+            url: "" 
+
+        grype:
+          namespace: "default"
+          targetImagePullSecret: "tap-registry"
+          # In a single cluster, the connection between the scanning pod and the metadata store happens inside the cluster and does not pass through ingress. This is automatically configured, you do not need to provide an ingress connection to the store.
+
+        policy:
+          tuf_enabled: false 
+
+        cnrs:
+          domain_template: '{{.Name}}-{{.Namespace}}.{{.Domain}}'
+
+        namespace_provisioner:
+          controller: false
+          gitops_install:
+            ref: origin/main
+            subPath: clusters/akslab2/cluster-config/namespaces
+            url: https://github.com/tfynes-pivotal/tap-gitops2
+          additional_sources:
+          - git:
+              ref: origin/main
+              subPath: clusters/akslab2/cluster-config/namespaces/namespace-resources
+              url: https://github.com/tfynes-pivotal/tap-gitops2
+            path: _ytt_lib/namespace-resources
+        #!  import_data_values_secrets:
+        #!   - name: my-dockerhub-credentials
+        #!     namespace: tap-install
+        #!     create_export: true
+        #! package_overlays:
+        #! - name: tap-gui
+        #!   secrets:
+        #!   - name: cm-tap-gui-sa-overlay
