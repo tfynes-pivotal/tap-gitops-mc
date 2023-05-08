@@ -1,0 +1,35 @@
+tap_install:
+    sensitive_values:
+        learningcenter:
+            imageRegistry:
+                host: ENC[AES256_GCM,data:7T513iBKRJiqxXxQYBP0eTrL,iv:yJVeJ0EarDd6uNPSNu63ZV3WOsrGbg+RgmwwgVqJ7JA=,tag:f3ODY+eyAaMobwo/R9vPOg==,type:str]
+                username: ENC[AES256_GCM,data:Qhbugnq7,iv:H73LTlT4mb6/68Rsy+A15nq2PgVVd9tl7zzgGZNeht4=,tag:QlVcmdfznMwwya8ETm7Ssw==,type:str]
+                password: ENC[AES256_GCM,data:HUj7/Eo0mdygC/FGTBhPhiLRYPkiw1r/bOz6+JDEG/EW2Edp,iv:OvRQJa37nNJfTortcgxMmtgBQfxZ0n8MYXPCCCPSfpk=,tag:Zn6rCbZMQTR8h7xgjS08zw==,type:str]
+        tap_gui:
+            app_config:
+                auth:
+                    providers:
+                        github:
+                            development:
+                                clientId: ENC[AES256_GCM,data:UTXvUZfPR4mcF7YT8C6xe9Y3VwU=,iv:MXlcFDkP/DzMnaZQKKWd0mk3rPFg9WWJlDt6fFDhb5U=,tag:73YR8mKCNPajxIVLiQaRnA==,type:str]
+                                clientSecret: ENC[AES256_GCM,data:Z3E/GUk/O6/5OjaO/wQO7qUiWCfHae2JYl5jBlg3CPpr8Vyop+6VDQ==,iv:eFU/58kWfFvLGF3ExhaCvCb7zC19NL9nNu36dAdt+ak=,tag:tUtS/Vz30197ruE/1vAR4A==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u74ps32m3mcvd6zjaw8w2p3wwfucz0r2rxrsxmq8ldlyv5lapgkqle505u
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBLK0N6VW9BT0VMOTI0Y1p1
+            V3Q3NXdrZFhCdk1PSk5CQkYrWktwempmVFVjClRoTUdraWhEMkx3OVFPT0hrOEJU
+            NjYzTThhOXhJL1pIbStFekllMjRNd0kKLS0tIFZJcXpXT0x5T2NjZFovZ0tNdlM5
+            RkExOVRwa3o0cURMa2pzOWV3Y094UDgK23h+bwfpvAuyueQzTzGgeNetzC8yTytt
+            ZnxylgXcepiyTyds0Piaq6JG0n5NTle0ptf3Mkw5XnhBApYUN/5Xqw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-05-04T15:09:10Z"
+    mac: ENC[AES256_GCM,data:QAr7C5ef61cMtV50nNh4vomQ95o/Nzee4FPpemZEQUThfFFQftAJde2KezEwEDRECc60KrH4IgioUXjwOuR5jxm0oN2VTBPpRNl9IqTTfvKxi7iPKk/tW2zvFQCorWV46UVCx9JiSlvlX1PgzQsgzmLcqWzRvZF7PFXSnasIWPM=,iv:HbpdM8HC+p88sN+CUsiTGNQn9ePt1Pm4BE+snP8pVQ0=,tag:xe1H08+QEG9RQtvmJPd0GQ==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.7.3

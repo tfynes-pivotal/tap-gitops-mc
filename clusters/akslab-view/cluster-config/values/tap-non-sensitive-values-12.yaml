@@ -1,0 +1,43 @@
+---
+tap_install:
+  values: 
+        shared:
+          ingress_domain: "akslab-view.tap.fynesy.com"
+          ingress_issuer: "letsencrypt-production"
+        
+        ceip_policy_disclosed: true
+        profile:  view
+
+        contour:
+          envoy:
+            service:
+              type: LoadBalancer 
+
+        tap_gui:
+          service_type: ClusterIP # If the shared.ingress_domain is set as earlier, this must be set to ClusterIP.
+          app_config:
+            auth:
+              allowGuestAccess: true
+            catalog:
+              locations:
+                - type: url
+                  target: http://github.com/tfynes-pivotal/tapblankcatalog/blob/main/catalog-info.yaml
+          kubernetes:
+            serviceLocatorMethod:
+              type: 'multiTenant'
+            clusterLocatorMethods:
+              - type: 'config'
+                clusters: 
+                  - url:  https://akslab-build.tap.fynesy.com
+                    name: akslab-build
+                    authProvider: serviceAccount
+                    serviceAccountToken: build-cluster-token
+                    skipTLSVerify: true
+                  - url:  https://akslab-run.tap.fynesy.com
+                    name: akslab-run
+                    authProvider: serviceAccount
+                    serviceAccountToken: run-cluster-token
+                    skipTLSVerify: true
+        appliveview:
+          ingressEnabled: true
+
