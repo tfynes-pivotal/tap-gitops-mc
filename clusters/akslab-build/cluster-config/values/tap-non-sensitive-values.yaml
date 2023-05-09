@@ -20,6 +20,18 @@ tap_install:
         scanning:
           metadataStore:
             url: ""
-
+        
+        namespace_provisioner:
+          controller: false
+          gitops_install:
+            ref: origin/main
+            subPath: clusters/akslab-build/cluster-config/namespaces
+            url: https://github.com/tfynes-pivotal/tap-gitops-mc
+          additional_sources:
+          - git:
+              ref: origin/main
+              subPath: clusters/akslab-build/cluster-config/namespaces/namespace-resources
+              url: https://github.com/tfynes-pivotal/tap-gitops-mc
+            path: _ytt_lib/namespace-resources
 
 
