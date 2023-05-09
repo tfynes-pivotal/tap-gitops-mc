@@ -1,0 +1,25 @@
+---
+tap_install:
+  values: 
+        profile: run
+        ceip_policy_disclosed: true
+        
+        shared:
+          ingress_domain: "akslab.tap.fynesy.com"
+          ingress_issuer: "letsencrypt-production"
+
+        supply_chain: basic
+
+        contour:
+          envoy:
+            service:
+              type: LoadBalancer 
+
+        cnrs:
+          domain_template: '{{.Name}}-{{.Namespace}}.{{.Domain}}'
+
+        appliveview_connector:
+          backend:
+            sslDeactivated: true
+            ingressEnabled: true
+            host: appliveview.akslab.tap.fynesy.com
