@@ -29,15 +29,15 @@ tap_install:
             clusterLocatorMethods:
               - type: 'config'
                 clusters:
-                  - url: CLUSTER-URL
+                  - url: https://akslab-bui-rg1-3bcc02-czaaz0vp.hcp.eastus.azmk8s.io:443
                     name: akslab-build
                     authProvider: serviceAccount
-                    serviceAccountToken: CLUSTER-TOKEN
+                    serviceAccountToken: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkM5Y3JmV2hqOVFfLUl3X2h6akhvYmxsNG9YSW9JU3doMjZrT3RyQkYtZE0ifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJ0YXAtZ3VpIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InRhcC1ndWktdmlld2VyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InRhcC1ndWktdmlld2VyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiODg4NDJiYjItNWE0OS00OTY4LWE4MWItZWM1ODZlMThmOTE5Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OnRhcC1ndWk6dGFwLWd1aS12aWV3ZXIifQ.Kq8Spzv8C_70CKOPD_reVsu30_Dj__buPOmK12vvwfARAC9bPSBrzH3CUkP81vzRghSGTG1usaRd6zFIQp3THqdAR3Joi3vXXSsCeUoziSWOggeyJpcKGcU8tBVfJE4pbcXFkQfi5wEEqT5hl06ipn0YbVnEuat93b3EWJ3nFHKJTrwsFzR3nc0nQXuSbjKSCVMKBTGvtWQkAACveORBM_PatP9d_3q7d8KdvRDFQBlMiMSI5WFFmFFG2aRYaZ6lBHhKXXJoOttLDMKpCSZR9pdoV0zHOUi3L35B37qbIv2O3lUwprbYX5Zfj5fYQGjIIv6E351nzILcGjzOTgWvfgi_nKyKsVJN00pcjaMXsQ28Zq_QrxwX1LMXx1vMivH0fM6RJ3cd9xjwv97km02_Ri7gKkWkUe8zD9itYUtUKN9aoDQyhOp-qp8QX4ct-txKewWrOK9hivcrpOyPIxo19qMd4RmSH3s2jTaO7mQSJxghY_4lN_LFw63KU9u0cQTN9uOB2vVeT32n3XpLVtO40kPS0nHj8wbA6CFRe2go6NxgNUBVlt0tjgP6irM6aDWWZ2SbVwT6o2Z0HfaDcWVtJakbJiQeMUQX05BY0VYkiWPkF-4KCSMlqh5l0LFpNxXWp-mlBehUP_FhwlxC5Xj_zu52a1lLBnUrKvwt1muev_0'
                     skipTLSVerify: true
-                  - url: CLUSTER-URL
+                  - url: https://akslab-run-rg1-3bcc02-v4ccoucl.hcp.eastus.azmk8s.io:443
                     name: akslab-run
                     authProvider: serviceAccount
-                    serviceAccountToken: CLUSTER-TOKEN
+                    serviceAccountToken: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IndmT2VtOXdyVXBGQlMwTDZGUGdSX003OHk2RnllYjduSGxlWHZxbGxDczAifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJ0YXAtZ3VpIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InRhcC1ndWktdmlld2VyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InRhcC1ndWktdmlld2VyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiYzExZDQ5YWYtOGFjZC00NTkwLTliNmMtNTRlM2FiOTkxZDZjIiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OnRhcC1ndWk6dGFwLWd1aS12aWV3ZXIifQ.i-SuoaoIJVM1typw_JKStoQREpk4ou2h_xM06lqwpmvVUCyzRHNUYgQNfNbi-7DiZI7s1t66VYXud2h_qA9MPcupnvKtVSi7SWgmUUpgh6Exx5b1DWT0Deobwkp1mDNXfpg8idVYunEvJuvQLsCH5WbgY4VmEr8pUq3hKGAJmOdrh6NF5c2EYxEnMVk3aedzdaonBY-VcFtN06FH-1sFOYV8hqBpGzexZ0Yk4Wm7PsLUDgri3lMUDC-1o7RFX8GW7bxXVurFeoDorGSiLmGiZctgk4DBBgRJpA38_3jQCRiMuaqw1Ao-HSH3oTDBxrMXRE3vkOA6Xq2fJEIX4F9s6K2BxnPbivDMayZWZyms2A5jtNb9mJFKNh0oxh8Ro8rf6RPrMtMzYcHsuxH1L2ZNc1c9NLZj-3byZwTwQ4dg9DzjfDJIWjte_-bLDqiNTxra88WwTF3RjUOppwY406c_KXBtxl6q6oOFdiRKzX9jjyrXV_aEEIaJxKkbtLlT-xqcU6bCHr47ejFreBQYj8Xq_NsUCEbShUAQ2liyLvrA6j-Mcmzb5BHiouLPv067nIGU0PGw-sjdh_rmawM2TpLAm8tTLpcPdNr8cQMbwzudESuiuAloejxu0uQyUDqHXpF8Dcvk6FnNELY5zdLxTLmSe1Sf_V8yXuk-62_Ln8ln4xI'
                     skipTLSVerify: true
 
         appliveview:
