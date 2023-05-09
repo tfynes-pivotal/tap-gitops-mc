@@ -10,14 +10,14 @@ tap_install:
           image_registry: 
             project_path: fynesy/build-service
             secret:
-              name: user-registry-dockerconfig
-              namespace: tap-install
+              name: tbs-install-pull-secret
+              namespace: build-service
 
         buildservice:
           kp_default_repository: fynesy/build-service
           kp_default_repository_secret:
-            name: user-registry-dockerconfig
-            namespace: tap-install
+            name: tbs-install-pull-secret
+            namespace: build-service
 
         supply_chain: basic
 
