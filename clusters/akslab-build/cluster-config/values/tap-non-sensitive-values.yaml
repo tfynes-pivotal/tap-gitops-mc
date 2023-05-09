@@ -7,6 +7,27 @@ tap_install:
         shared:
           ingress_domain: "akslab-build.tap.fynesy.com"
           ingress_issuer: "letsencrypt-production"
+          image_registry: 
+            project_path: fynesy/build-service
+            secret:
+              name: user-registry-dockerconfig
+              namespace: tap-install
+
+        buildservice:
+          kp_default_repository: fynesy/build-service
+          kp_default_repository_secret:
+            name: user-registry-dockerconfig
+            namespace: tap-install
+
+        supply_chain: basic
+
+        ootb_supply_chain_basic: 
+          registry:
+            server: "index.docker.io"
+            repository: "fynesy"
+          gitops:
+            ssh_secret: ""
+          
 
         grype:
           namespace: "default"
