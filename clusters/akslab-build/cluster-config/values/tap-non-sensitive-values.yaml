@@ -1,0 +1,25 @@
+---
+tap_install:
+  values: 
+        profile: build
+        ceip_policy_disclosed: true
+        
+        shared:
+          ingress_domain: "akslab.tap.fynesy.com"
+          ingress_issuer: "letsencrypt-production"
+
+        grype:
+          namespace: "default"
+          targetImagePullSecret: "tap-registry"
+          metadataStore:
+            url:
+            caSecret:
+              name: store-ca-cert
+              importFromNamespace: metadata-store-secrets
+        
+        scanning:
+          metadataStore:
+            url: ""
+
+
+
