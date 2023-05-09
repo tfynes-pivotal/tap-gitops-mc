@@ -16,6 +16,8 @@ tap_install:
         tap_gui:
           service_type: ClusterIP
           app_config:
+            auth:
+              allowGuestAccess: true
             catalog:
               locations:
                 - type: url
