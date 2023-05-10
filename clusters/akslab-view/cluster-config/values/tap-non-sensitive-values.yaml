@@ -23,22 +23,6 @@ tap_install:
                 - type: url
                   target: http://github.com/tfynes-pivotal/tapblankcatalog/blob/main/catalog-info.yaml
 
-          kubernetes:
-            serviceLocatorMethod:
-              type: 'multiTenant'
-            clusterLocatorMethods:
-              - type: 'config'
-                clusters:
-                  - url: https://akslab-bui-rg1-3bcc02-czaaz0vp.hcp.eastus.azmk8s.io:443
-                    name: akslab-build
-                    authProvider: serviceAccount
-                    serviceAccountToken: ''
-                    skipTLSVerify: true
-                  - url: https://akslab-run-rg1-3bcc02-v4ccoucl.hcp.eastus.azmk8s.io:443
-                    name: akslab-run
-                    authProvider: serviceAccount
-                    serviceAccountToken: ''
-                    skipTLSVerify: true
 
         appliveview:
           ingressEnabled: true
